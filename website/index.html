@@ -60,6 +60,8 @@
             <li><a href="#drawings">Drawings</a></li>
             <li><a href="#testing">Testing</a></li>
             <li><a href="#result">Result</a></li>
+            <li><a href="#references">References</a></li>
+            <li><a href="#code_appendix">Code Appendix</a></li>
           </ul>
         </div>
         <!--/.nav-collapse -->
@@ -261,21 +263,19 @@
         </ul>
         <h3>Total: $95.00</h3>
       </div>
-      <hr >
       <div style="font-size: 18px">
+        <hr id="references" >
         <h2>References</h2>
         <a href="https://picamera.readthedocs.io/">PiCamera Document</a><br >
-        <a href="http://www.micropik.com/PDF/SG90Servo.pdf"
-          >Tower Pro Servo Datasheet</a
-        ><br >
-        <a href="http://getbootstrap.com/">Bootstrap</a><br >
         <a href="http://abyz.co.uk/rpi/pigpio/">Pigpio Library</a><br >
         <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/Home/"
           >R-Pi GPIO Document</a
         ><br >
+        <a href="https://stackoverflow.com/a/72138638">Color detection by masking</a><br>
+        <a href="https://stackoverflow.com/questions/70424964/how-to-communicate-between-two-raspberry-pi-via-bluetooth-and-send-sensor-data-f">Bluetooth communication between two Pis</a><br>
       </div>
 
-      <hr >
+      <hr id="code_appendix" >
 
       <div class="row">
         <h2>Code Appendix</h2>
@@ -877,8 +877,6 @@ finally:
     GPIO.cleanup()
     </code></pre>
     <h4>The code that connects the gun to the robot using bluetooth and responds to a button press by sending the color in the center of the image.</h4>
-    </div>
-    </div>
     <!-- /.container -->
 
     <!-- Bootstrap core JavaScript

@@ -14,4 +14,13 @@ hr { margin: 20px 0 20px 0; }
   display: block;  
   margin-right: auto;  
   margin-left: auto;  
-}  
+}
+
+iframe {
+  border: 1px solid black
+}
+
+.drawings {
+  width: 600px;
+  height: auto;
+}

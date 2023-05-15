@@ -10,14 +10,16 @@ body {
 hr { margin: 20px 0 20px 0; }
 
 .center-block {  
-    width:640px;
+  width:640px;
   display: block;  
   margin-right: auto;  
   margin-left: auto;  
 }
 
 iframe {
-  border: 1px solid black
+  border: 1px solid black;
+  margin: auto;
+  display: block;
 }
 
 .drawings {

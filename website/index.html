@@ -361,7 +361,7 @@ def turn_ccw(in_pin1, in_pin2):
 def fix_direction(in_pin1, in_pin2):
     if direction > 0:
         turn_cw(in_pin1, in_pin2)
-    elif direction < 0:
+    elif direction &lt; 0:
         turn_ccw(in_pin1, in_pin2)
 
 def half_speed(in_pin1, in_pin2, pwm):
@@ -391,13 +391,13 @@ histories = [[('Stop', 0) for x in range(3)], [('Stop', 0) for x in range(3)]]
 def left_history():
     history = ''
     for args in histories[left]:
-        history = history + '{0:<12}{1:>4}'.format(*args) + '\n'
+        history = history + '{0:&lt;12}{1:>4}'.format(*args) + '\n'
     return history
 
 def right_history():
     history = ''
     for args in histories[right]:
-        history = history + '{0:<12}{1:>4}'.format(*args) + '\n'
+        history = history + '{0:&lt;12}{1:>4}'.format(*args) + '\n'
     return history
 
 def update_history(side, command):

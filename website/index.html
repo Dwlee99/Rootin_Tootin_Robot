@@ -68,7 +68,7 @@
 
     <div class="container">
       <div class="starter-template">
-        <h1>Rootin Tootin Robot</h1>
+        <h1>Rootin' Tootin' Robot</h1>
         <p class="lead">A fun gun game<br >A Project By Derek Lee, Keyi Zhou.</p>
       </div>
 
@@ -89,10 +89,10 @@
         <h2>Introduction</h2>
         <p style="text-align: left; padding: 0px 30px">
           We present a shooting robot game that we designed and built using
-          Raspberry Pi, PiTFT, motors, servos, and Bluetooth communication. Our
-          objective was to create an engaging and fun game and demostrate what
-          we have learnt throughout the quarter, and that can be played by one
-          or two players. Here will describe the design, testing, and results of
+          two Raspberry Pis, a PiTFT, motors, servos, and Bluetooth communication. Our
+          objective was to create an engaging and fun game and to demonstrate what
+          we have learned throughout the semester. The game is playable by one
+          player. Here we will describe the design, testing, and results of
           our project.
         </p>
       </div>
@@ -112,10 +112,10 @@
         <div class="col-md-8" style="font-size: 18px">
           <h2>Project Objective:</h2>
           <ul>
-            <li>Design and build a shooting robot game using RaspberryPi</li>
+            <li>Design and build a shooting robot game using a RaspberryPi</li>
             <li>Wire and assemble a robot containing motors, a Raspberry Pi, a PiTFT, wheels, servos and power supplies.</li>
-            <li>3D design and print a gun model that can contain a Raspberry Pi, a recovery button, a power bank, and a camera.</li>
-            <li>Control the servo and motor using PWM signal</li>
+            <li>3D design and print a gun model that can contain a Raspberry Pi, a button, a power bank, and a camera.</li>
+            <li>Control the servo and motor using PWM signal.</li>
             <li>Implement computer vision algorithms to detect colors in the camera's field of view.</li>
             <li>Program the gun device to communicate wirelessly with the robot car using Bluetooth.</li>
           </ul>
@@ -127,31 +127,31 @@
       <div style="text-align: center">
         <h2>Design</h2>
         <p style="text-align: left; padding: 0px 30px">
-          We used Raspberry Pi as the main controller for both the robot car and
+          We used a Raspberry Pi as the main controller for both the robot car and
           the gun station. The robot car uses two motors, a motor controller and
-          controlled by hardware PWM, and had two balloon flags controlled by
+          controlled by hardware PWM, and had two balloon flags that moved through
           servos controlled by software PWM. The gun station had a camera and
-          use color detection to detect whether the target is aimed and a
-          recovery button for triggering the detection process and
-          starting/stoping the game. The two components communicated with each
+          used color detection to detect whether the gun is aiming at one of the balloons
+          and a button for triggering the detection process and
+          starting / stopping the game. The two components communicated with each
           other via Bluetooth.
         </p>
         <p>
-          When the button from gun is being pressed for the first time, the
-          balloon flags will raise indicating the start of the game. Then the
-          robot will move randomly. Player should try to aim the camera at the
-          balloon flag and use the button to "shoot". When the button is
-          pressed, the camera will take a picture, then analyze the center color
-          of the image. If the color turns out to be one of the flag's, it will
-          send a message to the robot. Robot will put down the flag by rotating
-          the servo. When both targets are down, player won the game, and the
-          robot will stop. Pressing the button once agian will start the game
-          agian. After the first target being down, player has 5 chances to
-          shoot down the other one. Failing to do so will result in the restart
-          of the game, which both flag will be raised again. There is also an
-          emergency stop flag, which is green, when button is pressed and camera
-          detected green, the robot will stop. Pressing the button again will
-          restart the game.
+          When the button from the gun is pressed for the first time, the
+          balloon flags will raise (if they are not already) indicating the start 
+          of the game. Then the robot will move randomly. The player then will try 
+          to aim the camera at the balloon targets and use the button to "shoot." 
+          When the button is pressed, the camera will take a picture, then analyze 
+          the center of the image to detect the most prominent color. It then sends 
+          this color to the robot. If the color is one of the flags', the robot will 
+          put down the flag by rotating the servo. When both targets are down, the 
+          player has won the game, and the robot will stop. Pressing the button after 
+          the game has been won will start the game again. After the first target is 
+          down, the player has 5 chances to shoot down the other one. Failing to do 
+          so will result in both of the flags being raised again. There is also an 
+          emergency stop "button," which is green. When the button on the gun is 
+          pressed and the camera detects green, the robot will stop. Pressing the 
+          button again will restart the game.
         </p>
       </div>
 
@@ -159,21 +159,16 @@
 
       <div style="text-align: center">
         <h2>Drawings</h2>
-        <p style="text-align: left; padding: 0px 30px">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          lorem nulla, consectetur at leo vel, pretium bibendum nisl. Cras
-          blandit quam a enim ultrices, eu convallis enim posuere. Donec
-          eleifend enim sed purus consectetur, vitae cursus lectus varius.
-          Vivamus consectetur felis nec est venenatis posuere. Phasellus vitae
-          aliquet erat. In laoreet lacinia mollis. Quisque iaculis nisl
-          fermentum pharetra lobortis. Donec rhoncus dui sem, ac molestie leo
-          tristique vel. Phasellus in nibh feugiat, fringilla lectus in,
-          elementum magna. Etiam quis dui condimentum, tempus ex in, dapibus
-          est. Cras ut congue augue. Donec ac enim ex. Ut id tristique risus,
-          vel porttitor quam. Sed ultricies enim eu nibh porttitor, vel sodales
-          enim feugiat. Fusce volutpat venenatis magna ac ultrices. Curabitur
-          eget urna ut nulla mattis convallis non eu diam.
-        </p>
+        <img
+            class="drawings"
+            src="pics/crude_drawing.png"
+            alt=
+            "A crude drawing of the gun and robot system. The image shows a box 
+            with wheels that has two targets on its back and a gun that is shooting 
+            laser beams out of itself towards the targets."
+        >
+        <h4>The drawing that conceived the idea of the Rootin' Tootin' Robot</h4>
+        
       </div>
 
       <hr id="testing" >
@@ -181,13 +176,13 @@
       <div style="text-align: center">
         <h2>Testing</h2>
         <p style="text-align: left; padding: 0px 30px">
-          We tested our shooting robot game extensively to ensure that it worked
-          as intended and was free of bugs and glitches. We performed multiple
-          rounds of testing, including hardware and software tests for each
-          seperate unit, and the overall playing experience. It truns out that
-          the robot is working as expected. We also collected feedback from
-          several test users to identify areas for improvement and address any
-          issues that arose.
+          We tested our shooting robot game by playing it many times to ensure that it 
+          worked as intended and was free of bugs and glitches. The only glitch and or 
+          bug is that one could cheat at our game by "shooting" at something blue or 
+          yellow that is not the balloons. We performed multiple rounds of testing, 
+          including hardware and software tests for each seperate unit, and, as stated 
+          earlier, playing the game many times. the overall playing experience. Our game
+          works as expected.
         </p>
       </div>
 
@@ -196,10 +191,15 @@
       <div style="text-align: center">
         <h2>Result</h2>
         <p style="text-align: left; padding: 0px 30px">
-          Our shooting robot game was successful in achieving its objectives of
+          Our shooting robot game was successful in achieving its objective of
           providing an engaging and fun game. We received positive feedback from
           test users and were able to identify areas for improvement to make the
-          game even better.
+          game even better if we had more time to work on the project. If we were
+          to work on the project longer, we would add more balloons to create more
+          targets for the user to need to shoot down. We would also create multiple
+          difficulty levels that utilized the speed of the robot and varying levels
+          of unpredictability to create a more challenging experience for those that
+          wanted the game to be harder.
         </p>
       </div>
 

@@ -19,3 +19,8 @@ hr { margin: 20px 0 20px 0; }
 iframe {
   border: 1px solid black
 }
+
+.drawings {
+  width: 600px;
+  height: auto;
+}

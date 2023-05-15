@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="" >
-    <meta name="author" content="" >
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <title>Rootin Tootin Robot</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet" >
+    <link href="starter-template.css" rel="stylesheet" />
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9
@@ -71,35 +71,44 @@
     <div class="container">
       <div class="starter-template">
         <h1>Rootin' Tootin' Robot</h1>
-        <p class="lead">A fun gun game<br >A Project By Derek Lee, Keyi Zhou.</p>
+        <p class="lead">
+          A fun gun game<br />A Project By Derek Lee, Keyi Zhou.
+        </p>
+        <h1>Rootin Tootin Robot</h1>
+        <p class="lead">
+          A fun gun game<br />A Project By Derek Lee, Keyi Zhou.
+        </p>
       </div>
 
-      <hr >
+      <hr />
       <div class="center-block">
         <iframe
-          width="640"
-          height="360"
-          src="https://www.youtube.com/embed/GuM8vTq0jd4"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Pa8P_2Hz4QA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
         <h4 style="text-align: center">Demonstration Video</h4>
       </div>
 
-      <hr id="intro" >
+      <hr id="intro" />
 
       <div style="text-align: center">
         <h2>Introduction</h2>
         <p style="text-align: left; padding: 0px 30px">
-          We present a shooting robot game that we designed and built using
-          two Raspberry Pis, a PiTFT, motors, servos, and Bluetooth communication. Our
-          objective was to create an engaging and fun game and to demonstrate what
-          we have learned throughout the semester. The game is playable by one
-          player. Here we will describe the design, testing, and results of
-          our project.
+          We present a shooting robot game that we designed and built using two
+          Raspberry Pis, a PiTFT, motors, servos, and Bluetooth communication.
+          Our objective was to create an engaging and fun game and to
+          demonstrate what we have learned throughout the semester. The game is
+          playable by one player. Here we will describe the design, testing, and
+          results of our project.
         </p>
       </div>
 
-      <hr id="obj" >
+      <hr id="obj" />
 
       <div class="row">
         <div class="col-md-4" style="text-align: center">
@@ -109,86 +118,99 @@
             alt="Generic placeholder image"
             width="240"
             height="240"
-          >
+          />
         </div>
         <div class="col-md-8" style="font-size: 18px">
           <h2>Project Objective:</h2>
           <ul>
-            <li>Design and build a shooting robot game using a RaspberryPi</li>
-            <li>Wire and assemble a robot containing motors, a Raspberry Pi, a PiTFT, wheels, servos and power supplies.</li>
-            <li>3D design and print a gun model that can contain a Raspberry Pi, a button, a power bank, and a camera.</li>
-            <li>Control the servo and motor using PWM signal.</li>
-            <li>Implement computer vision algorithms to detect colors in the camera's field of view.</li>
-            <li>Program the gun device to communicate wirelessly with the robot car using Bluetooth.</li>
+            <li>Design and build a shooting robot game using RaspberryPi</li>
+            <li>
+              Wire and assemble a robot containing motors, a Raspberry Pi, a
+              PiTFT, wheels, servos and power supplies.
+            </li>
+            <li>
+              3D design and print a gun model that can contain a Raspberry Pi, a
+              recovery button, a power bank, and a camera.
+            </li>
+            <li>Control the servo and motor using PWM signal</li>
+            <li>
+              Implement computer vision algorithms to detect colors in the
+              camera's field of view.
+            </li>
+            <li>
+              Program the gun device to communicate wirelessly with the robot
+              car using Bluetooth.
+            </li>
           </ul>
         </div>
       </div>
 
-      <hr id="design" >
+      <hr id="design" />
 
       <div style="text-align: center">
         <h2>Design</h2>
         <p style="text-align: left; padding: 0px 30px">
-          We used a Raspberry Pi as the main controller for both the robot car and
-          the gun station. The robot car uses two motors, a motor controller and
-          controlled by hardware PWM, and had two balloon flags that moved through
-          servos controlled by software PWM. The gun station had a camera and
-          used color detection to detect whether the gun is aiming at one of the balloons
-          and a button for triggering the detection process and
-          starting / stopping the game. The two components communicated with each
-          other via Bluetooth.
+          We used a Raspberry Pi as the main controller for both the robot car
+          and the gun station. The robot car uses two motors, a motor controller
+          and controlled by hardware PWM, and had two balloon flags that moved
+          through servos controlled by software PWM. The gun station had a
+          camera and used color detection to detect whether the gun is aiming at
+          one of the balloons and a button for triggering the detection process
+          and starting / stopping the game. The two components communicated with
+          each other via Bluetooth.
         </p>
         <p>
           When the button from the gun is pressed for the first time, the
-          balloon flags will raise (if they are not already) indicating the start 
-          of the game. Then the robot will move randomly. The player then will try 
-          to aim the camera at the balloon targets and use the button to "shoot." 
-          When the button is pressed, the camera will take a picture, then analyze 
-          the center of the image to detect the most prominent color. It then sends 
-          this color to the robot. If the color is one of the flags', the robot will 
-          put down the flag by rotating the servo. When both targets are down, the 
-          player has won the game, and the robot will stop. Pressing the button after 
-          the game has been won will start the game again. After the first target is 
-          down, the player has 5 chances to shoot down the other one. Failing to do 
-          so will result in both of the flags being raised again. There is also an 
-          emergency stop "button," which is green. When the button on the gun is 
-          pressed and the camera detects green, the robot will stop. Pressing the 
-          button again will restart the game.
+          balloon flags will raise (if they are not already) indicating the
+          start of the game. Then the robot will move randomly. The player then
+          will try to aim the camera at the balloon targets and use the button
+          to "shoot." When the button is pressed, the camera will take a
+          picture, then analyze the center of the image to detect the most
+          prominent color. It then sends this color to the robot. If the color
+          is one of the flags', the robot will put down the flag by rotating the
+          servo. When both targets are down, the player has won the game, and
+          the robot will stop. Pressing the button after the game has been won
+          will start the game again. After the first target is down, the player
+          has 5 chances to shoot down the other one. Failing to do so will
+          result in both of the flags being raised again. There is also an
+          emergency stop "button," which is green. When the button on the gun is
+          pressed and the camera detects green, the robot will stop. Pressing
+          the button again will restart the game.
         </p>
       </div>
 
-      <hr id="drawings" >
+      <hr id="drawings" />
 
       <div style="text-align: center">
         <h2>Drawings</h2>
         <img
-            class="drawings"
-            src="pics/crude_drawing.png"
-            alt=
-            "A crude drawing of the gun and robot system. The image shows a box 
+          class="drawings"
+          src="pics/crude_drawing.png"
+          alt="A crude drawing of the gun and robot system. The image shows a box 
             with wheels that has two targets on its back and a gun that is shooting 
             laser beams out of itself towards the targets."
-        >
-        <h4>The drawing that conceived the idea of the Rootin' Tootin' Robot</h4>
-        
+        />
+        <h4>
+          The drawing that conceived the idea of the Rootin' Tootin' Robot
+        </h4>
       </div>
 
-      <hr id="testing" >
+      <hr id="testing" />
 
       <div style="text-align: center">
         <h2>Testing</h2>
         <p style="text-align: left; padding: 0px 30px">
-          We tested our shooting robot game by playing it many times to ensure that it 
-          worked as intended and was free of bugs and glitches. The only glitch and or 
-          bug is that one could cheat at our game by "shooting" at something blue or 
-          yellow that is not the balloons. We performed multiple rounds of testing, 
-          including hardware and software tests for each seperate unit, and, as stated 
-          earlier, playing the game many times. the overall playing experience. Our game
-          works as expected.
+          We tested our shooting robot game by playing it many times to ensure
+          that it worked as intended and was free of bugs and glitches. The only
+          glitch and or bug is that one could cheat at our game by "shooting" at
+          something blue or yellow that is not the balloons. We performed
+          multiple rounds of testing, including hardware and software tests for
+          each seperate unit, and, as stated earlier, playing the game many
+          times. the overall playing experience. Our game works as expected.
         </p>
       </div>
 
-      <hr id="result" >
+      <hr id="result" />
 
       <div style="text-align: center">
         <h2>Result</h2>
@@ -196,16 +218,16 @@
           Our shooting robot game was successful in achieving its objective of
           providing an engaging and fun game. We received positive feedback from
           test users and were able to identify areas for improvement to make the
-          game even better if we had more time to work on the project. If we were
-          to work on the project longer, we would add more balloons to create more
-          targets for the user to need to shoot down. We would also create multiple
-          difficulty levels that utilized the speed of the robot and varying levels
-          of unpredictability to create a more challenging experience for those that
-          wanted the game to be harder.
+          game even better if we had more time to work on the project. If we
+          were to work on the project longer, we would add more balloons to
+          create more targets for the user to need to shoot down. We would also
+          create multiple difficulty levels that utilized the speed of the robot
+          and varying levels of unpredictability to create a more challenging
+          experience for those that wanted the game to be harder.
         </p>
       </div>
 
-      <hr >
+      <hr />
 
       <div class="row" style="text-align: center">
         <h2>Work Distribution</h2>
@@ -215,7 +237,7 @@
             src="pics/group.jpg"
             alt="Generic placeholder image"
             style="width: 80%"
-          >
+          />
           <h4>Project group picture</h4>
         </div>
         <div class="col-md-6" style="font-size: 16px">
@@ -225,7 +247,7 @@
             alt="Generic placeholder image"
             width="240"
             height="240"
-          >
+          />
           <h3>Rick</h3>
           <p class="lead">dwl72@cornell.edu</p>
           <p>
@@ -240,14 +262,14 @@
             alt="Generic placeholder image"
             width="240"
             height="240"
-          >
-          <h3>Morty</h3>
+          />
+          <h3>Keyi Zhou</h3>
           <p class="lead">kz263@cornell.edu</p>
-          <p>Tested the overall system.</p>
+          <p>Assembled robot, wired and programmed motors and servos. Wrote code for responding to button presses.</p>
         </div>
       </div>
 
-      <hr >
+      <hr />
       <div style="font-size: 18px">
         <h2>Parts List</h2>
         <ul>
